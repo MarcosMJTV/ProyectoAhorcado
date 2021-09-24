@@ -55,7 +55,7 @@ public class Proceso {
 			--Main.intentos;
 			Main.ventana.getLabelDibujo().setIcon(Main.dibujos.get(3 - Main.intentos));
 			if (Main.intentos == 0) {
-				System.out.println("сссс");
+				System.out.println("пїЅпїЅпїЅпїЅ");
 				Main.ventana.getLabelMensaje().setText("");
 				Main.ventana.getLabelMensaje().setText("has perdido");
 			}
@@ -63,7 +63,7 @@ public class Proceso {
 			boolean won = !hayGuiones(guiones);
 			if (won == true) {
 				System.out.println("gggg");
-				Main.ventana.getLabelMensaje().setText("has ganado!!!!!");
+				Main.ventana.getLabelMensaje().setText("has ganado!!!!!!");
 
 			}
 		}
