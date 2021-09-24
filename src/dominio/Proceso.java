@@ -3,6 +3,8 @@ package dominio;
 import java.util.Random;
 import java.util.Scanner;
 
+import javax.swing.ImageIcon;
+
 import frames.VentanaJuego;
 import main.Main;
 
@@ -39,6 +41,10 @@ public class Proceso {
 	}
 
 	public void Juego() {
+		Main.ventana.getTextField().requestFocus();
+		if (Main.ventana.getTextField().getText().equals("")) {
+			return;
+		}
 
 		char letra = Main.ventana.getTextField().getText().charAt(0);
 		Main.ventana.getTextField().setText("");
@@ -53,18 +59,24 @@ public class Proceso {
 		if (!acertada) {
 			Main.ventana.getLabelMensaje().setText("letra correcta");
 			--Main.intentos;
-			Main.ventana.getLabelDibujo().setIcon(Main.dibujos.get(3 - Main.intentos));
-			if (Main.intentos == 0) {
-				System.out.println("����");
-				Main.ventana.getLabelMensaje().setText("");
-				Main.ventana.getLabelMensaje().setText("has perdido");
+			Main.ventana.getLabelDibujo().setIcon(Main.dibujos.get(9 - Main.intentos));
+			if (Main.intentos == 1) {
+				System.out.println("ldkjfklsjdf");
+				Main.ventana.getPanel().setVisible(false);
+				Main.ventana.getLabelMensaje().setVisible(false);
+				Main.ventana.getBtnNewButton().setVisible(false);
+				Main.ventana.getTextField().setVisible(false);
+				Main.ventana.getLblNewLabel().setVisible(false);
 			}
 		} else {
 			boolean won = !hayGuiones(guiones);
 			if (won == true) {
-				System.out.println("gggg");
-				Main.ventana.getLabelMensaje().setText("has ganado!!!!!!");
-
+				Main.ventana.getLabelDibujo().setIcon(new ImageIcon(Main.direc2 + "ganador.png"));
+				Main.ventana.getPanel().setVisible(false);
+				Main.ventana.getLabelMensaje().setVisible(false);
+				Main.ventana.getBtnNewButton().setVisible(false);
+				Main.ventana.getTextField().setVisible(false);
+				Main.ventana.getLblNewLabel().setVisible(false);
 			}
 		}
 

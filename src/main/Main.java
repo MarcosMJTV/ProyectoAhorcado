@@ -7,12 +7,13 @@ import javax.swing.ImageIcon;
 
 public class Main {
 	public static String [] palabras = {"cosa","asereje","skyrim","muleta","accidente", "ushuaia"};
-	//public static int intentos = 9;
-	public static int intentos = 3;
+	public static int intentos = 9;
+	//public static int intentos = 3;
 	public static Proceso p = new Proceso();
 	public static VentanaJuego ventana;
 	public static ArrayList<ImageIcon> dibujos = new ArrayList<>();
 	public static String direc = "C:\\Users\\marco\\Documents\\WorkSpace\\ProyectoGochAhorcado\\src\\recursos\\imaAho\\";
+	public static String direc2 = "C:\\Users\\marco\\Documents\\WorkSpace\\ProyectoGochAhorcado\\src\\recursos\\";
 	
 	
 	
