@@ -63,7 +63,7 @@ public class Proceso {
 			boolean won = !hayGuiones(guiones);
 			if (won == true) {
 				System.out.println("gggg");
-				Main.ventana.getLabelMensaje().setText("has ganado");
+				Main.ventana.getLabelMensaje().setText("has ganado!!!!!");
 
 			}
 		}
