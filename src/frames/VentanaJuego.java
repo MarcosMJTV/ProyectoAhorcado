@@ -9,6 +9,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import dominio.Comandos;
 import main.Main;
 
 import javax.swing.JLabel;
@@ -22,15 +23,14 @@ public class VentanaJuego extends JFrame {
 	private JPanel contentPane;
 	private JTextField textField;
 	private JLabel lblNewLabel;
-	private JButton btnNewButton;
 	private JLabel labelDibujo;
 	private JLabel labelMensaje;
 	
 	private JPanel panel;
+	private JButton botonSalir;
+	private JButton botonReiniciar;
 
-	/**
-	 * Create the frame.
-	 */
+	
 	public VentanaJuego() {
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -60,18 +60,7 @@ public class VentanaJuego extends JFrame {
 		textField.setFont(new Font("Tahoma", Font.PLAIN, 32));
 		contentPane.add(textField);
 		textField.setColumns(10);
-
-		btnNewButton = new JButton("Enter");
-		btnNewButton.setBounds(182, 264, 70, 23);
-		btnNewButton.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				Main.p.Juego();
-			}
-			
-		});
-		contentPane.add(btnNewButton);
+		textField.addKeyListener(new Comandos());
 		
 		labelDibujo = new JLabel("");
 		labelDibujo.setBounds(54, 39, 335, 156);
@@ -80,9 +69,17 @@ public class VentanaJuego extends JFrame {
 		
 		labelMensaje = new JLabel("New label");
 		labelMensaje.setBounds(10, 230, 162, 31);
-		labelMensaje.setFont(new Font("Segoe Script", Font.PLAIN, 14));
+		labelMensaje.setFont(new Font("Segoe Script", Font.BOLD, 16));
 		labelMensaje.setHorizontalAlignment(SwingConstants.CENTER);
 		contentPane.add(labelMensaje);
+		
+		botonSalir = new JButton("Salir");
+		botonSalir.setBounds(335, 264, 89, 23);
+		contentPane.add(botonSalir);
+		
+		botonReiniciar = new JButton("Reiniciar");
+		botonReiniciar.setBounds(20, 264, 89, 23);
+		contentPane.add(botonReiniciar);
 		setVisible(true);
 	}
 
@@ -94,9 +91,7 @@ public class VentanaJuego extends JFrame {
 		return textField;
 	}
 
-	public JButton getBtnNewButton() {
-		return btnNewButton;
-	}
+	
 	public JLabel getLabelDibujo() {
 		return labelDibujo;
 	}
@@ -105,5 +100,11 @@ public class VentanaJuego extends JFrame {
 	}
 	public JPanel getPanel() {
 		return panel;
+	}
+	public JButton getbotonReiniciar() {
+		return botonReiniciar;
+	}
+	public JButton getBotonSalir() {
+		return botonSalir;
 	}
 }
